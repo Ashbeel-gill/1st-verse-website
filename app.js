@@ -39,6 +39,44 @@
   }
 
   /* ---------------------------------------------------------
+     Drop the entire page to its finished/visible state.
+     Used for reduced-motion AND as a resilience fallback when the
+     animation ticker never advances (rAF starved on some mobile /
+     background loads) — so choreographed content can never get
+     stuck permanently invisible.
+  --------------------------------------------------------- */
+  function showFinalState() {
+    gsap.set("[data-reveal], [data-stagger], .line__inner, [data-show-bubble], [data-show-toast]", {
+      opacity: 1,
+      y: 0,
+    });
+    gsap.set("[data-convo-item]", { autoAlpha: 1 });
+    gsap.set("[data-convo-typing]", { autoAlpha: 0 });
+    $$("[data-countup]").forEach(setCountFinal);
+    // feature demos: show complete
+    gsap.set("[data-feat-pop]", { autoAlpha: 1, scale: 1, y: 0 });
+    gsap.set("[data-cmp-pop]", { autoAlpha: 1, scale: 1, y: 0 });
+    gsap.set("[data-feat-curtain]", { scaleX: 0 });
+    gsap.set("[data-feat-bar]", { scaleX: 1 });
+    $$("[data-feat-ring]").forEach((r) => r.style.setProperty("--score", "97"));
+    // showcases: pull the chart curtain back so the graphic is visible
+    gsap.set("[data-show-curtain]", { scaleX: 0 });
+    // theatre: freeze every vignette at its finished state
+    gsap.set("[data-v-pop]", { autoAlpha: 1 });
+    gsap.set("[data-v-bar]", { scaleX: 1 });
+    gsap.set(".vig__tick-mark", { scale: 1 });
+    gsap.set("[data-v-row]", { opacity: 1 });
+    gsap.set("[data-wire-h]", { scaleX: 1 });
+    gsap.set("[data-wire-v]", { scaleY: 1 });
+    const pctEl = $("[data-v-pct]");
+    if (pctEl) pctEl.textContent = "100%";
+    const costEl = $("[data-v-cost]");
+    if (costEl) costEl.textContent = "$2,947";
+    const typedEl = $("[data-v-typed]");
+    if (typedEl) typedEl.textContent = "Morning — how's launch day?";
+  }
+
+  /* ---------------------------------------------------------
      Responsive animation contexts
   --------------------------------------------------------- */
   const mm = gsap.matchMedia();
@@ -53,32 +91,7 @@
       const { isDesktop, reduceMotion } = context.conditions;
 
       if (reduceMotion) {
-        gsap.set("[data-reveal], [data-stagger], .line__inner, [data-show-bubble], [data-show-toast]", {
-          opacity: 1,
-          y: 0,
-        });
-        gsap.set("[data-convo-item]", { autoAlpha: 1 });
-        gsap.set("[data-convo-typing]", { autoAlpha: 0 });
-        $$("[data-countup]").forEach(setCountFinal);
-        // feature demos: show complete
-        gsap.set("[data-feat-pop]", { autoAlpha: 1, scale: 1, y: 0 });
-        gsap.set("[data-cmp-pop]", { autoAlpha: 1, scale: 1, y: 0 });
-        gsap.set("[data-feat-curtain]", { scaleX: 0 });
-        gsap.set("[data-feat-bar]", { scaleX: 1 });
-        $$("[data-feat-ring]").forEach((r) => r.style.setProperty("--score", "97"));
-        // theatre: freeze every vignette at its finished state
-        gsap.set("[data-v-pop]", { autoAlpha: 1 });
-        gsap.set("[data-v-bar]", { scaleX: 1 });
-        gsap.set(".vig__tick-mark", { scale: 1 });
-        gsap.set("[data-v-row]", { opacity: 1 });
-        gsap.set("[data-wire-h]", { scaleX: 1 });
-        gsap.set("[data-wire-v]", { scaleY: 1 });
-        const pctEl = $("[data-v-pct]");
-        if (pctEl) pctEl.textContent = "100%";
-        const costEl = $("[data-v-cost]");
-        if (costEl) costEl.textContent = "$2,947";
-        const typedEl = $("[data-v-typed]");
-        if (typedEl) typedEl.textContent = "Morning — how's launch day?";
+        showFinalState();
         return;
       }
 
@@ -985,4 +998,32 @@
     });
     return () => t.kill();
   });
+
+  /* ---------------------------------------------------------
+     Resilience net
+     Choreographed content and the chat launcher start hidden and are
+     revealed by GSAP. Two real-world failure modes are guarded here:
+
+     1. Mobile ScrollTrigger positions computed before images/fonts
+        settle (or shifted by the address bar) can end up unreachable,
+        so reveals never fire — recompute them once the page fully
+        loads and whenever the viewport orientation changes.
+
+     2. On some mobile / background-tab loads requestAnimationFrame is
+        throttled so hard the GSAP ticker never advances — no animation
+        ever plays, leaving every reveal invisible and the launcher a
+        0x0 dot. Detect that (ticker didn't move) and drop the page to
+        its finished, visible, clickable state.
+  --------------------------------------------------------- */
+  const refreshTriggers = () => ScrollTrigger.refresh();
+  window.addEventListener("load", refreshTriggers);
+  window.addEventListener("orientationchange", refreshTriggers);
+
+  const tickerAtBoot = gsap.ticker.time;
+  window.setTimeout(() => {
+    const tickerAlive = gsap.ticker.time - tickerAtBoot > 0.1;
+    if (tickerAlive) return; // animations are running — leave them alone
+    showFinalState();
+    if (launcher) gsap.set(launcher, { clearProps: "all" });
+  }, 3000);
 })();
