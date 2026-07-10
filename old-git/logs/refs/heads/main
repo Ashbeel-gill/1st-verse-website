@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 7b6b35b1dbff50186d8285f2b1b8a419b71a811b Ashbeel Gill <Ashbeelgill100@gmail.com> 1779920733 +0500	commit (initial): first commit - complete landing page with cal embed
+7b6b35b1dbff50186d8285f2b1b8a419b71a811b 7b6b35b1dbff50186d8285f2b1b8a419b71a811b Ashbeel Gill <Ashbeelgill100@gmail.com> 1779920751 +0500	Branch: renamed refs/heads/master to refs/heads/main
+7b6b35b1dbff50186d8285f2b1b8a419b71a811b f518e321d0dae0e9a22e1241c1974834fd9f73b1 Ashbeel Gill <Ashbeelgill100@gmail.com> 1779921659 +0500	commit: fix: make header logo link to top of page
+f518e321d0dae0e9a22e1241c1974834fd9f73b1 0bc5996bc8d9371b6246010400da7b1d3d4da6e8 Ashbeel Gill <Ashbeelgill100@gmail.com> 1781720648 +0500	commit: fix: update favicon to use new orange logo mark

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1st-verse — Real humans. Unreal customer experience.</title>
+  <meta name="description" content="1st-verse places trained, dedicated human CX agents inside your Shopify or SaaS stack. One flat rate — $15/hour, all-in. No bots. No overhead. No surprises." />
+  <link rel="canonical" href="https://1st-verse.com/" />
+  <meta name="theme-color" content="#FCFCFD" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="1st-verse" />
+  <meta property="og:url" content="https://1st-verse.com/" />
+  <meta property="og:title" content="Real humans. Unreal customer experience." />
+  <meta property="og:description" content="Trained, dedicated human CX agents inside your Shopify or SaaS stack. One flat rate — $15/hour, all-in. No bots. No overhead. No surprises." />
+  <meta property="og:image" content="https://1st-verse.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="1st-verse — real human CX agents, $15/hour all-in." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Real humans. Unreal customer experience." />
+  <meta name="twitter:description" content="Trained human CX agents in your stack. One flat rate — $15/hour, all-in. No bots, ever." />
+  <meta name="twitter:image" content="https://1st-verse.com/assets/og-image.png" />
+
+  <!-- Self-hosted Figtree — preload the critical Latin subset (crossorigin required for fonts) -->
+  <link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='1' y='1' width='38' height='38' rx='11' fill='%231972F5'/%3E%3Cpath d='M12.8 17.4 Q18.1 12.5 18.1 15.6 L18.1 21.2' fill='none' stroke='white' stroke-width='4.2'/%3E%3Cpath d='M27.9 12.8 Q27.9 15.8 21.5 22.6' fill='none' stroke='white' stroke-width='4.2'/%3E%3Ccircle cx='18.1' cy='26.2' r='2.8' fill='%23FFC53D'/%3E%3C/svg%3E" />
+  <!-- Cal.com popup embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "30min", { origin: "https://app.cal.com" });
+    Cal.ns["30min"]("ui", { styles: { branding: { brandColor: "#1972F5" } }, hideEventTypeDetails: false, layout: "month_view" });
+  </script>
+
+  <!-- Structured data: brand + service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://1st-verse.com/#org",
+        "name": "1st-verse",
+        "url": "https://1st-verse.com/",
+        "logo": "https://1st-verse.com/assets/logos/1st-verse-mark.svg",
+        "image": "https://1st-verse.com/assets/og-image.png",
+        "email": "ashbeel@helpthemallfoundation.org",
+        "description": "1st-verse places trained, dedicated human CX agents inside Shopify and SaaS support stacks. One flat rate — $15/hour, all-in. 100% human, no bots ever.",
+        "slogan": "Real humans. Unreal customer experience."
+      },
+      {
+        "@type": "Service",
+        "name": "Dedicated human CX agents",
+        "serviceType": "Customer support outsourcing",
+        "provider": { "@id": "https://1st-verse.com/#org" },
+        "description": "Trained, dedicated human customer-experience agents embedded in your helpdesk, store and Slack. Billed to the minute at one flat all-in rate, with a weekly itemized ledger. 24/7 follow-the-sun coverage from Lisbon, Manila and Bogotá.",
+        "areaServed": "Worldwide",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "15.00",
+            "priceCurrency": "USD",
+            "unitCode": "HUR",
+            "unitText": "hour"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does “$15/hour, all-in” actually include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Everything. The agent’s time, recruiting, three weeks of brand training, ongoing QA scoring, team management, and the tooling they work in. No onboarding fee, no platform fee, no minimum. You’re billed to the minute, and the Monday ledger itemizes every one of them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these really humans? No AI anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every reply your customers receive is written by a named human agent. We use software for routing and QA analytics behind the scenes — never for customer-facing conversation. It’s in the contract: no bots, ever."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can we actually go live?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The connection takes about 60 seconds — helpdesk, store, Slack. Your agents then train on your past tickets and macros for one to three days, and go live in a shared Slack channel where you watch every reply from day one."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if the quality isn’t there?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every conversation is QA-graded against your rubric. If an agent scores below 95, we retrain them on our own time, not your invoice. And the first 7 days are free — if we’re not obviously better than what you have, walk away owing nothing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you cover nights, weekends and spikes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — follow-the-sun teams in Lisbon, Manila and Bogotá cover 24/7. For launches and holiday spikes we pre-stage extra trained agents on your account so response times hold while volume triples."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#" aria-label="1st-verse home">
+        <svg class="brand__mark" viewBox="0 0 40 40" width="32" height="32" aria-hidden="true">
+          <rect x="1" y="1" width="38" height="38" rx="11" fill="#1972F5"/>
+          <path d="M12.8 17.4 Q18.1 12.5 18.1 15.6 L18.1 21.2" fill="none" stroke="#fff" stroke-width="4.2"/>
+          <path d="M27.9 12.8 Q27.9 15.8 21.5 22.6" fill="none" stroke="#fff" stroke-width="4.2"/>
+          <circle cx="18.1" cy="26.2" r="2.8" fill="#FFC53D"/>
+        </svg>
+        <span class="brand__word">1st-verse</span>
+      </a>
+      <nav class="topbar__nav" aria-label="Main">
+        <a href="#services">Features</a>
+        <a href="#process">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="topbar__cta">
+        <a class="topbar__signin" href="#pricing">Calculate savings</a>
+        <button class="btn btn--blue" type="button"
+          data-cal-link="1st-verse/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+          Book a call <span class="btn__arr" aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+      <button class="topbar__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+    <div class="topbar__sheet" id="mobile-menu">
+      <a href="#services">Features</a>
+      <a href="#process">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <button class="btn btn--blue" type="button"
+        data-cal-link="1st-verse/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+        Book a 15-min call <span class="btn__arr" aria-hidden="true">&rarr;</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="aurora aurora--1" data-aurora></span>
+        <span class="aurora aurora--2" data-aurora></span>
+        <span class="aurora aurora--3" data-aurora></span>
+        <span class="hero__dots hero__dots--l"></span>
+        <span class="hero__dots hero__dots--r"></span>
+      </div>
+
+      <p class="hero__eyebrow" data-reveal>
+        <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+        Human-led support for Shopify &amp; SaaS
+      </p>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span class="line__inner">Real humans.</span></span>
+        <span class="line"><span class="line__inner"><span class="hl"><span class="hl__ink">Unreal</span></span> customer experience.</span></span>
+      </h1>
+
+      <p class="hero__sub" data-reveal>
+        Trained, dedicated agents inside your Shopify or SaaS stack from
+        <strong>$15/hour, all-in</strong> &mdash; billed to the minute, itemized every Monday.
+        No bots. No overhead. No surprises.
+      </p>
+
+      <div class="hero__actions" data-reveal>
+        <a href="#pricing" class="btn btn--blue btn--lg btn--shine" data-magnetic>Calculate my savings <span class="btn__arr" aria-hidden="true">&rarr;</span></a>
+        <button class="btn btn--ghost btn--lg" type="button" data-magnetic
+          data-cal-link="1st-verse/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+          Book a 15-min call
+        </button>
+      </div>
+      <p class="hero__micro" data-reveal>7-day free trial &nbsp;&middot;&nbsp; No contracts &nbsp;&middot;&nbsp; No card required</p>
+
+      <!-- 3D floating conversation scene -->
+      <div class="scene" data-scene aria-hidden="true">
+        <div class="scene3d" data-scene3d>
+          <div class="scene-card">
+            <div class="scene-card__head">
+              <span class="ava ava--sk">SK</span>
+              <span class="scene-card__who"><b>Sarah K. &middot; 1st-verse</b><small>Dedicated agent &mdash; your Slack, your store</small></span>
+              <span class="scene-card__live"><i></i>Online</span>
+            </div>
+            <div class="scene-card__thread" data-convo>
+              <div class="bubble bubble--cust" data-convo-item>
+                Hey! Order #4823 hasn&rsquo;t arrived yet &#128533;
+              </div>
+              <div class="slot">
+                <div class="bubble bubble--typing" data-convo-typing><span></span><span></span><span></span></div>
+                <div class="bubble bubble--agent" data-convo-item>
+                  Just checked &mdash; it&rsquo;s out for delivery before 6pm. I&rsquo;ve added a free express upgrade to your next order &#128153;
+                </div>
+              </div>
+              <span class="bubble__meta" data-convo-item>Seen &middot; replied in 38 seconds</span>
+              <div class="bubble bubble--cust" data-convo-item>
+                You just saved my launch day. Best support ever &#128588;
+              </div>
+            </div>
+          </div>
+
+          <div class="f-chip f-chip--team" data-z="70">
+            <span class="ava-stack">
+              <span class="ava ava--sk">SK</span>
+              <span class="ava ava--dm">DM</span>
+              <span class="ava ava--an">AN</span>
+            </span>
+            <span class="f-chip__txt"><b>Your team</b><small>Sarah, Devon &amp; Aisha &middot; online</small></span>
+          </div>
+
+          <div class="f-chip f-chip--csat" data-z="55">
+            <span class="f-chip__txt"><b>4.9 <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></b><small>CSAT, last 30 days</small></span>
+          </div>
+
+          <div class="f-chip f-chip--save" data-z="90">
+            <span class="f-chip__ic f-chip__ic--blue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M7 8.5C7 6.6 9.2 5.5 12 5.5s5 1.1 5 3-2.2 3-5 3-5 1.1-5 3 2.2 3 5 3 5-1.1 5-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <span class="f-chip__txt"><b data-countup="3459" data-prefix="+$">+$0</b><small>saved this month</small></span>
+          </div>
+
+          <div class="f-chip f-chip--speed" data-z="60">
+            <span class="f-chip__ic f-chip__ic--orange">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg>
+            </span>
+            <span class="f-chip__txt"><b>38s</b><small>first response</small></span>
+          </div>
+
+          <svg class="doodle doodle--squiggle" data-z="110" viewBox="0 0 90 34" width="72" aria-hidden="true">
+            <path d="M4 28 C 16 6, 26 6, 34 22 C 42 38, 52 10, 60 14 C 68 18, 76 10, 86 6" fill="none" stroke="#1972F5" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+          </svg>
+          <svg class="doodle doodle--spark" data-z="130" viewBox="0 0 36 36" width="30" aria-hidden="true">
+            <path d="M18 2 L21.5 14.5 L34 18 L21.5 21.5 L18 34 L14.5 21.5 L2 18 L14.5 14.5 Z" fill="#FF6F3E"/>
+          </svg>
+          <svg class="doodle doodle--spark2" data-z="100" viewBox="0 0 36 36" width="22" aria-hidden="true">
+            <path d="M18 2 L21.5 14.5 L34 18 L21.5 21.5 L18 34 L14.5 21.5 L2 18 L14.5 14.5 Z" fill="#955CF4"/>
+          </svg>
+          <span class="orb orb--1" data-z="30"></span>
+          <span class="orb orb--2" data-z="120"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CX STACK ============ -->
+    <section class="stack" aria-label="Works with your CX stack">
+      <p class="stack__label">Works inside the CX stack you already use &mdash; plugged in, in 60 seconds</p>
+      <div class="stack__mask">
+        <div class="stack__row">
+          <span class="tool"><img src="assets/logos/slack.svg" alt="" class="tool__glyph" />Slack</span>
+          <span class="tool"><img src="assets/logos/gorgias.svg" alt="Gorgias" class="tool__wordmark" /></span>
+          <span class="tool"><img src="assets/logos/zendesk.svg" alt="" class="tool__glyph" />Zendesk</span>
+          <span class="tool"><img src="assets/logos/intercom.svg" alt="" class="tool__glyph" />Intercom</span>
+          <span class="tool"><img src="assets/logos/shopify.svg" alt="Shopify" class="tool__wordmark" /></span>
+          <span class="tool"><img src="assets/logos/freshdesk.svg" alt="" class="tool__glyph" />Freshdesk</span>
+          <span class="tool"><img src="assets/logos/whatsapp.svg" alt="" class="tool__glyph" />WhatsApp</span>
+          <span class="tool"><img src="assets/logos/messenger.svg" alt="" class="tool__glyph" />Messenger</span>
+          <span class="tool"><img src="assets/logos/klaviyo.svg" alt="Klaviyo" class="tool__wordmark" /></span>
+          <span class="tool"><img src="assets/logos/recharge.svg" alt="Recharge" class="tool__wordmark" /></span>
+          <span class="tool"><img src="assets/logos/hubspot.svg" alt="HubSpot" class="tool__wordmark" /></span>
+          <span class="tool"><img src="assets/logos/aircall.svg" alt="" class="tool__glyph" />Aircall</span>
+          <!-- duplicate set for the seamless loop -->
+          <span class="tool" aria-hidden="true"><img src="assets/logos/slack.svg" alt="" class="tool__glyph" />Slack</span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/gorgias.svg" alt="" class="tool__wordmark" /></span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/zendesk.svg" alt="" class="tool__glyph" />Zendesk</span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/intercom.svg" alt="" class="tool__glyph" />Intercom</span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/shopify.svg" alt="" class="tool__wordmark" /></span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/freshdesk.svg" alt="" class="tool__glyph" />Freshdesk</span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/whatsapp.svg" alt="" class="tool__glyph" />WhatsApp</span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/messenger.svg" alt="" class="tool__glyph" />Messenger</span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/klaviyo.svg" alt="" class="tool__wordmark" /></span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/recharge.svg" alt="" class="tool__wordmark" /></span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/hubspot.svg" alt="" class="tool__wordmark" /></span>
+          <span class="tool" aria-hidden="true"><img src="assets/logos/aircall.svg" alt="" class="tool__glyph" />Aircall</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURE GRID ============ -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal>What you get</p>
+        <h2 class="section__title" id="services-title" data-reveal>Everything a support team should be.<br />None of the overhead.</h2>
+      </header>
+      <div class="grid6">
+        <article class="feat" data-stagger>
+          <div class="feat__demo">
+            <span class="fdemo-toast" data-feat-pop>
+              <span class="fdemo-ic fdemo-ic--green"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="fdemo-toast__tx"><b>Cart rescued</b><small>+$184 &middot; Sofia</small></span>
+            </span>
+          </div>
+          <h3>Shopify revenue ops</h3>
+          <p>Agents live in your admin &mdash; tracking orders, rescuing carts, upselling with taste.</p>
+        </article>
+        <article class="feat" data-stagger>
+          <div class="feat__demo">
+            <span class="fdemo-spark">
+              <svg viewBox="0 0 130 46" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="fspark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#955CF4" stop-opacity="0.2"/><stop offset="1" stop-color="#955CF4" stop-opacity="0"/></linearGradient></defs>
+                <path d="M2 38 C 28 40, 48 30, 72 22 S 108 8, 128 5 L128 46 L2 46 Z" fill="url(#fspark)"/>
+                <path d="M2 38 C 28 40, 48 30, 72 22 S 108 8, 128 5" fill="none" stroke="#955CF4" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="128" cy="5" r="3.5" fill="#955CF4"/>
+              </svg>
+              <span class="fdemo-spark__curtain" data-feat-curtain></span>
+              <b class="fdemo-pct" data-countup="18" data-prefix="+" data-suffix="%">+0%</b>
+            </span>
+          </div>
+          <h3>SaaS retention</h3>
+          <p>At-risk accounts spotted in conversation and saved with judgment, not macros.</p>
+        </article>
+        <article class="feat feat--hero" data-stagger>
+          <div class="feat__demo">
+            <span class="fdemo-team">
+              <span class="fdemo-city" data-feat-pop><span class="ava ava--sk">SK</span><small>Lisbon</small><em>09:02</em></span>
+              <span class="fdemo-city" data-feat-pop><span class="ava ava--dm">DM</span><small>Manila</small><em>16:02</em></span>
+              <span class="fdemo-city" data-feat-pop><span class="ava ava--an">AN</span><small>Bogot&aacute;</small><em>04:02</em></span>
+              <span class="fdemo-live" data-feat-pop><i></i>always on</span>
+            </span>
+          </div>
+          <h3>24/7 human coverage</h3>
+          <p>Follow-the-sun teams in Lisbon, Manila and Bogot&aacute;. Your 3 a.m. customer meets a person.</p>
+        </article>
+        <article class="feat" data-stagger>
+          <div class="feat__demo">
+            <span class="fdemo-chs">
+              <span class="fdemo-ch" data-feat-pop><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M4 7.5l8 5.5 8-5.5" stroke="currentColor" stroke-width="1.8"/></svg></span>
+              <span class="fdemo-ch" data-feat-pop><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.8 3.5V5.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <span class="fdemo-ch" data-feat-pop><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 3h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <span class="fdemo-ch" data-feat-pop><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.6"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            </span>
+          </div>
+          <h3>Every channel</h3>
+          <p>Email, live chat, socials, phone &mdash; one warm brand voice at every door.</p>
+        </article>
+        <article class="feat" data-stagger>
+          <div class="feat__demo feat__demo--center">
+            <span class="fdemo-ring" data-feat-ring style="--score:0"><b data-countup="97">0</b></span>
+            <span class="fdemo-note" data-feat-pop><span class="fdemo-ic fdemo-ic--blue"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>QA score</span>
+          </div>
+          <h3>QA on every reply</h3>
+          <p>Conversations scored against your rubric. Below 95, we retrain on our dime.</p>
+        </article>
+        <article class="feat feat--wide" data-stagger>
+          <div class="feat__demo feat__demo--speed">
+            <b class="fdemo-timer" data-countup="38" data-suffix="s">0s</b>
+            <span class="fdemo-track"><i class="fdemo-track__fill" data-feat-bar></i></span>
+            <small class="fdemo-cap">median first reply</small>
+          </div>
+          <h3>38-second responses</h3>
+          <p>Median first reply, around the clock. Yes, seconds &mdash; the ledger proves it.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SHOWCASE 1 — Shopify ============ -->
+    <section class="section" aria-labelledby="show1-title">
+      <div class="show show--blue" data-show="blue">
+        <div class="show__copy">
+          <p class="eyebrow" data-reveal>For Shopify brands</p>
+          <h2 class="show__title" id="show1-title" data-reveal>Turn your inbox into a checkout lane</h2>
+          <p class="show__sub" data-reveal>Order tracking, exchanges, rescued carts &mdash; handled inside your Shopify admin by people who know your catalog cold.</p>
+          <ul class="ticks" data-reveal>
+            <li>Carts rescued in the conversation, not by coupon blast</li>
+            <li>Pre-sale questions answered before the tab closes</li>
+            <li>Refunds turned into exchanges, exchanges into upsells</li>
+          </ul>
+        </div>
+        <div class="show__visual" aria-hidden="true">
+          <div class="mini-thread">
+            <div class="bubble bubble--cust" data-show-bubble>Torn between the M and the L&hellip;</div>
+            <div class="bubble bubble--agent" data-show-bubble>You&rsquo;re between sizes &mdash; the linen relaxes, so take the M. Want me to hold one? It&rsquo;s the last three in stock.</div>
+            <div class="bubble bubble--cust" data-show-bubble>Sold. Adding it now &#128293;</div>
+          </div>
+          <div class="toast" data-show-toast>
+            <span class="toast__ic">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="#2DC862" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span><b>Cart rescued &mdash; $184</b><small>Sofia completed checkout</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHOWCASE 2 — SaaS ============ -->
+    <section class="section" aria-labelledby="show2-title">
+      <div class="show show--purple show--flip" data-show="purple">
+        <div class="show__copy">
+          <p class="eyebrow eyebrow--purple" data-reveal>For SaaS platforms</p>
+          <h2 class="show__title" id="show2-title" data-reveal>Churn, intercepted by actual judgment</h2>
+          <p class="show__sub" data-reveal>Cancellation energy shows up in support first. Our agents read it, save the account, and brief your team before renewal day.</p>
+          <ul class="ticks ticks--purple" data-reveal>
+            <li>At-risk signals flagged from live conversations</li>
+            <li>Saves handled with empathy, not retention scripts</li>
+            <li>Weekly insight digest straight to your Slack</li>
+          </ul>
+        </div>
+        <div class="show__visual" aria-hidden="true">
+          <div class="nrr-card">
+            <div class="nrr-card__head"><span>Net revenue retention</span><b data-countup="18" data-prefix="+" data-suffix="%">+0%</b></div>
+            <div class="nrr-card__chart">
+              <svg viewBox="0 0 260 100" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="nrrFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#955CF4" stop-opacity="0.22"/>
+                    <stop offset="1" stop-color="#955CF4" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 82 C 40 86, 70 74, 105 60 S 190 28, 260 12 L260 100 L0 100 Z" fill="url(#nrrFill)"/>
+                <path d="M0 82 C 40 86, 70 74, 105 60 S 190 28, 260 12" fill="none" stroke="#955CF4" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="260" cy="12" r="4.5" fill="#955CF4"/>
+              </svg>
+              <span class="curtain" data-show-curtain></span>
+            </div>
+            <div class="nrr-card__x"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
+          </div>
+          <div class="toast toast--purple" data-show-toast>
+            <span class="toast__ic">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.7-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12c-2 4.3-9.5 9-9.5 9z" fill="#955CF4"/></svg>
+            </span>
+            <span><b>Renewal saved &mdash; $12k ARR</b><small>Devon caught it 9 days early</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="process" aria-labelledby="process-title">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal>How it works</p>
+        <h2 class="section__title" id="process-title" data-reveal>Live in four steps.<br />Saving by the first Monday.</h2>
+      </header>
+      <div class="theatre" data-theatre>
+        <ol class="theatre__list">
+          <li class="t-step" data-t-step>
+            <div class="t-step__txt">
+              <span class="t-step__n" style="--tint:#E8F1FE;--ic:#1972F5">1</span>
+              <div>
+                <h3>Connect</h3>
+                <p>Plug in your helpdesk, store, and Slack. Takes 60 seconds.</p>
+              </div>
+            </div>
+            <span class="t-step__wire" aria-hidden="true"><span class="t-wire-h"><span class="t-wire-fill" data-wire-h></span></span><span class="t-wire-v"><span class="t-wire-fill" data-wire-v></span></span></span>
+            <div class="vig" data-vig="connect" aria-hidden="true">
+              <div class="vig__card vig__card--connect">
+                <div class="vig__scene">
+                  <span class="vig__tile vig__tile--1" data-v-tile><img src="assets/logos/zendesk.svg" alt="" /></span>
+                  <span class="vig__tile vig__tile--2" data-v-tile><img src="assets/logos/intercom.svg" alt="" /></span>
+                  <span class="vig__tile vig__tile--3" data-v-tile><img src="assets/logos/whatsapp.svg" alt="" /></span>
+                  <span class="vig__tile vig__tile--4" data-v-tile><img src="assets/logos/messenger.svg" alt="" /></span>
+                  <div class="vig__hub" data-v-hub>
+                    <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+                      <rect x="1" y="1" width="38" height="38" rx="11" fill="#1972F5"/>
+                      <path d="M12.8 17.4 Q18.1 12.5 18.1 15.6 L18.1 21.2" fill="none" stroke="#fff" stroke-width="4.2"/>
+                      <path d="M27.9 12.8 Q27.9 15.8 21.5 22.6" fill="none" stroke="#fff" stroke-width="4.2"/>
+                      <circle cx="18.1" cy="26.2" r="2.8" fill="#FFC53D"/>
+                    </svg>
+                  </div>
+                  <span class="vig__chip" data-v-pop>Connected &mdash; 60 seconds flat</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="t-step" data-t-step>
+            <div class="t-step__txt">
+              <span class="t-step__n" style="--tint:#F1EAFE;--ic:#955CF4">2</span>
+              <div>
+                <h3>Train</h3>
+                <p>We ingest your brand voice, past tickets, and macros.</p>
+              </div>
+            </div>
+            <span class="t-step__wire" aria-hidden="true"><span class="t-wire-h"><span class="t-wire-fill" data-wire-h></span></span><span class="t-wire-v"><span class="t-wire-fill" data-wire-v></span></span></span>
+            <div class="vig" data-vig="train" aria-hidden="true">
+              <div class="vig__card">
+                <div class="vig__card-head"><b>Training on your brand</b><span class="vig__pct" data-v-pct>0%</span></div>
+                <ul class="vig__checks">
+                  <li data-v-row><span class="vig__tick"><svg class="vig__tick-mark" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M5 12l4.5 4.5L19 7" fill="none" stroke="#955CF4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Brand voice ingested</li>
+                  <li data-v-row><span class="vig__tick"><svg class="vig__tick-mark" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M5 12l4.5 4.5L19 7" fill="none" stroke="#955CF4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3,412 past tickets read</li>
+                  <li data-v-row><span class="vig__tick"><svg class="vig__tick-mark" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M5 12l4.5 4.5L19 7" fill="none" stroke="#955CF4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Macros &amp; policies mapped</li>
+                  <li data-v-row><span class="vig__tick"><svg class="vig__tick-mark" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M5 12l4.5 4.5L19 7" fill="none" stroke="#955CF4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tone calibrated to 95+</li>
+                </ul>
+                <div class="vig__bar"><i class="vig__bar-fill" data-v-bar></i></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="t-step" data-t-step>
+            <div class="t-step__txt">
+              <span class="t-step__n" style="--tint:#FFEFE8;--ic:#FF6F3E">3</span>
+              <div>
+                <h3>Launch</h3>
+                <p>Your agents go live in a shared Slack channel. Nothing is a black box.</p>
+              </div>
+            </div>
+            <span class="t-step__wire" aria-hidden="true"><span class="t-wire-h"><span class="t-wire-fill" data-wire-h></span></span><span class="t-wire-v"><span class="t-wire-fill" data-wire-v></span></span></span>
+            <div class="vig" data-vig="launch" aria-hidden="true">
+              <div class="vig__card vig__card--slack">
+                <div class="vig__slack-head"><b>#</b> acme-cx &middot; shared channel</div>
+                <div class="vig__thread">
+                  <div class="vig__msg vig__msg--you" data-v-pop><span>Morning &mdash; how&rsquo;s launch day?</span></div>
+                  <div class="vig__msg" data-v-pop>
+                    <span class="ava ava--sk">SK</span>
+                    <span><b>Sarah K.</b> Live as of 9:02. First three tickets answered &mdash; queue is clear.</span>
+                  </div>
+                </div>
+                <div class="vig__compose">
+                  <span class="vig__typed" data-v-typed></span><i class="vig__caret"></i>
+                  <button class="vig__send" type="button" tabindex="-1" data-v-send>Send</button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="t-step" data-t-step>
+            <div class="t-step__txt">
+              <span class="t-step__n" style="--tint:#E7F8EE;--ic:#2DC862">4</span>
+              <div>
+                <h3>Scale</h3>
+                <p>Costs drop, CSAT climbs, and the Monday ledger itemizes both.</p>
+              </div>
+            </div>
+            <span class="t-step__wire" aria-hidden="true"><span class="t-wire-h"><span class="t-wire-fill" data-wire-h></span></span><span class="t-wire-v"><span class="t-wire-fill" data-wire-v></span></span></span>
+            <div class="vig" data-vig="scale" aria-hidden="true">
+              <div class="vig__card vig__card--cost">
+                <span class="vig__cost-label">Monthly support cost</span>
+                <b class="vig__cost" data-v-cost>$6,406</b>
+                <span class="vig__cost-sub">same hours &middot; routed to 1st-verse</span>
+                <span class="vig__stamp" data-v-pop>Saved $3,459/mo</span>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="t-cursor" data-t-cursor aria-hidden="true">
+          <span class="t-cursor__ripple" data-t-ripple></span>
+          <svg width="22" height="22" viewBox="0 0 24 24">
+            <path d="M5 3l14 8-6.2 1.6L9 19z" fill="#030D26" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPARISON TABLE ============ -->
+    <section class="section" id="compare" aria-labelledby="compare-title">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal>Why 1st-verse</p>
+        <h2 class="section__title" id="compare-title" data-reveal>Real humans beat <span class="hl"><span class="hl__ink">every</span></span> alternative.</h2>
+        <p class="section__sub" data-reveal>A managed agency that charges a premium for the same human work. An in-house desk you pay for through the nose. A bot your customers can smell. Or a fully-managed human team on your brand &mdash; from $15 an hour.</p>
+      </header>
+
+      <div class="cmp" data-reveal>
+        <table class="cmp__table" aria-label="1st-verse compared with a managed agency, an in-house desk and support bots">
+          <thead>
+            <tr>
+              <td class="cmp__corner"></td>
+              <th scope="col" class="cmp__col cmp__col--fv">
+                <span class="cmp__badge">Best value</span>
+                <span class="cmp__brand">1st-verse</span>
+              </th>
+              <th scope="col" class="cmp__col">Managed agency</th>
+              <th scope="col" class="cmp__col">In-house desk</th>
+              <th scope="col" class="cmp__col">Support bots</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-cmp-row>
+              <th scope="row">100% human agents, always</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></span></td>
+            </tr>
+            <tr data-cmp-row>
+              <th scope="row">Live in under an hour</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><small class="cmp-note">&lt; 60 min</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><small class="cmp-note">weeks to onboard</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><small class="cmp-note">weeks to hire</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--part"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 12h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></span><small class="cmp-note">days to build</small></span></td>
+            </tr>
+            <tr data-cmp-row>
+              <th scope="row">24/7 follow-the-sun coverage</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+            </tr>
+            <tr data-cmp-row>
+              <th scope="row">Trained on your brand voice</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--part"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 12h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></span><small class="cmp-note">scripted</small></span></td>
+            </tr>
+            <tr data-cmp-row>
+              <th scope="row">QA scored on every reply</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--part"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 12h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></span><small class="cmp-note">add-on</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--part"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 12h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></span><small class="cmp-note">if staffed</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></span></td>
+            </tr>
+            <tr data-cmp-row>
+              <th scope="row">Scale up or down instantly</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><small class="cmp-note">min. retainer</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+            </tr>
+            <tr data-cmp-row>
+              <th scope="row">No contracts, no overhead</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--yes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4.5 4.5L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span><small class="cmp-note">retainer + setup</small></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></span></td>
+              <td class="cmp__cell"><span class="cmp-val" data-cmp-pop><span class="cmp-mark cmp-mark--part"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 12h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg></span><small class="cmp-note">annual plans</small></span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="cmp__foot" data-cmp-row>
+              <th scope="row">All-in cost</th>
+              <td class="cmp__cell cmp__cell--fv"><span class="cmp-val cmp-val--price" data-cmp-pop><b>from $15<small>/hr</small></b></span></td>
+              <td class="cmp__cell"><span class="cmp-val cmp-val--price" data-cmp-pop><b>~$35<small>/hr</small></b></span></td>
+              <td class="cmp__cell"><span class="cmp-val cmp-val--price" data-cmp-pop><b>~$31<small>/hr</small></b></span></td>
+              <td class="cmp__cell"><span class="cmp-val cmp-val--price" data-cmp-pop><b>Cheap<small>&mdash; until they churn</small></b></span></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ PRICING / CALCULATOR ============ -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="pricing">
+        <div class="coin-wrap" aria-hidden="true">
+          <div class="coin"><span class="coin__face">$15</span></div>
+          <svg class="twinkle twinkle--1" viewBox="0 0 24 24" width="16"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z" fill="#FFC53D"/></svg>
+          <svg class="twinkle twinkle--2" viewBox="0 0 24 24" width="11"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z" fill="#1972F5"/></svg>
+        </div>
+        <header class="section__head section__head--tight">
+          <p class="eyebrow" data-reveal>Pricing</p>
+          <h2 class="section__title" id="pricing-title" data-reveal>One simple rate. <span class="hl hl--sm"><span class="hl__ink">Keep the difference.</span></span></h2>
+          <p class="section__sub" data-reveal>From $15 an hour buys the agent, the training, the QA, the management and the tooling. Slide your weekly hours &mdash; the ledger does the rest.</p>
+        </header>
+
+        <div class="calc" data-reveal>
+          <div class="calc__left">
+            <div class="calc__rate">
+              <span class="calc__rate-num">$<span data-fv-rate>15</span></span>
+              <span class="calc__rate-unit">/hour, all-in<br />billed to the minute</span>
+            </div>
+            <p class="calc__rate-tier" data-tier-label>up to 40 hrs / week</p>
+            <label class="calc__label" for="hours">Support hours per week</label>
+            <div class="calc__readout"><output id="hours-out" for="hours">20</output><span>hrs / week</span></div>
+            <input type="range" id="hours" min="5" max="168" step="1" value="20" aria-describedby="hours-out" />
+            <div class="calc__presets" role="group" aria-label="Hour presets">
+              <button type="button" data-hours="10">10</button>
+              <button type="button" data-hours="20" class="is-on">20</button>
+              <button type="button" data-hours="40">40</button>
+              <button type="button" data-hours="80">80</button>
+              <button type="button" data-hours="168">24/7</button>
+            </div>
+            <ul class="ticks calc__ticks">
+              <li>Dedicated, named agents &mdash; never pooled</li>
+              <li>Recruiting, training &amp; QA included</li>
+              <li>Management &amp; tooling included</li>
+              <li>7-day free trial &middot; no contracts</li>
+            </ul>
+            <div class="calc__tiers" aria-label="Rates by team size — all published, none gated">
+              <div class="calc__tiers-head">Rates scale as you grow &mdash; published, never gated</div>
+              <ul>
+                <li><span>Up to 40 hrs/wk</span><b>$15<small>/hr</small></b></li>
+                <li><span>More than 40 hrs/wk</span><b>$12<small>/hr</small></b></li>
+                <li><span>24/7 coverage</span><b>$10<small>/hr</small></b></li>
+                <li class="calc__tiers-custom"><span>Multiple agents?</span><button type="button" class="calc__tiers-book" data-cal-link="1st-verse/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Book a call &rarr;</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ledger" aria-live="polite">
+            <div class="ledger__head">
+              <span>Monthly ledger</span>
+              <span class="ledger__stamp">est.</span>
+            </div>
+            <div class="ledger__row ledger__row--muted">
+              <span>In-house agent <small>base wage &middot; $22/hr</small></span>
+              <b>$<span data-num="inhouseBase">1,907</span></b>
+            </div>
+            <div class="ledger__row ledger__row--muted">
+              <span>Benefits &amp; overhead <small>taxes, tools, mgmt &middot; +40%</small></span>
+              <b>$<span data-num="overhead">763</span></b>
+            </div>
+            <div class="ledger__row ledger__row--sub">
+              <span>In-house, all told</span>
+              <b>$<span data-num="inhouseTotal">2,670</span>/mo</b>
+            </div>
+            <div class="ledger__divider"><span>or, route to 1st-verse</span></div>
+            <div class="ledger__row ledger__row--fv">
+              <span>1st-verse agents <small>same hours &middot; $<span data-fv-rate>15</span>/hr, all-in</small></span>
+              <b>$<span data-num="firstverse">1,300</span>/mo</b>
+            </div>
+            <div class="ledger__total">
+              <div><small>You keep, monthly</small><b>$<span data-num="savingsMo">1,370</span></b></div>
+              <div><small>You keep, yearly</small><b>$<span data-num="savingsYr">16,440</span></b></div>
+            </div>
+            <div class="ledger__compare" aria-hidden="true">
+              <div class="lc__head">How that stacks up, monthly</div>
+              <div class="lc__row">
+                <div class="lc__meta"><span>Managed agency</span><small>~$35/hr</small></div>
+                <span class="lc__track"><i class="lc__fill" data-bar="agency" style="transform:scaleX(1)"></i></span>
+                <b class="lc__amt">$<span data-bar-num="agency">3,033</span></b>
+              </div>
+              <div class="lc__row">
+                <div class="lc__meta"><span>In-house desk</span><small>~$31/hr loaded</small></div>
+                <span class="lc__track"><i class="lc__fill" data-bar="inhouse" style="transform:scaleX(.88)"></i></span>
+                <b class="lc__amt">$<span data-bar-num="inhouse">2,670</span></b>
+              </div>
+              <div class="lc__row lc__row--fv">
+                <div class="lc__meta"><span>1st-verse</span><small>$<span data-fv-rate>15</span>/hr, all-in</small></div>
+                <span class="lc__track"><i class="lc__fill" data-bar="fv" style="transform:scaleX(.43)"></i></span>
+                <b class="lc__amt">$<span data-bar-num="fv">1,300</span></b>
+              </div>
+            </div>
+            <button class="btn btn--blue btn--lg btn--shine ledger__cta" type="button" data-magnetic
+              data-cal-link="1st-verse/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+              Claim this ledger <span class="btn__arr" aria-hidden="true">&rarr;</span>
+            </button>
+            <span class="ledger__note">Numbers verified live on your stack during a 15-min call.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal>FAQ</p>
+        <h2 class="section__title" id="faq-title" data-reveal>Fair questions, straight answers.</h2>
+      </header>
+      <div class="faq" data-reveal>
+        <details class="faq__item is-open" open>
+          <summary>What does &ldquo;$15/hour, all-in&rdquo; actually include?<span class="faq__x" aria-hidden="true"></span></summary>
+          <div class="faq__body"><div class="faq__inner"><p>Everything. The agent&rsquo;s time, recruiting, three weeks of brand training, ongoing QA scoring, team management, and the tooling they work in. No onboarding fee, no platform fee, no minimum. You&rsquo;re billed to the minute, and the Monday ledger itemizes every one of them.</p></div></div>
+        </details>
+        <details class="faq__item">
+          <summary>Are these really humans? No AI anywhere?<span class="faq__x" aria-hidden="true"></span></summary>
+          <div class="faq__body"><div class="faq__inner"><p>Every reply your customers receive is written by a named human agent. We use software for routing and QA analytics behind the scenes &mdash; never for customer-facing conversation. It&rsquo;s in the contract: no bots, ever.</p></div></div>
+        </details>
+        <details class="faq__item">
+          <summary>How fast can we actually go live?<span class="faq__x" aria-hidden="true"></span></summary>
+          <div class="faq__body"><div class="faq__inner"><p>The connection takes about 60 seconds &mdash; helpdesk, store, Slack. Your agents then train on your past tickets and macros for one to three days, and go live in a shared Slack channel where you watch every reply from day one.</p></div></div>
+        </details>
+        <details class="faq__item">
+          <summary>What if the quality isn&rsquo;t there?<span class="faq__x" aria-hidden="true"></span></summary>
+          <div class="faq__body"><div class="faq__inner"><p>Every conversation is QA-graded against your rubric. If an agent scores below 95, we retrain them on our own time, not your invoice. And the first 7 days are free &mdash; if we&rsquo;re not obviously better than what you have, walk away owing nothing.</p></div></div>
+        </details>
+        <details class="faq__item">
+          <summary>Can you cover nights, weekends and spikes?<span class="faq__x" aria-hidden="true"></span></summary>
+          <div class="faq__body"><div class="faq__inner"><p>Yes &mdash; follow-the-sun teams in Lisbon, Manila and Bogot&aacute; cover 24/7. For launches and holiday spikes we pre-stage extra trained agents on your account so response times hold while volume triples.</p></div></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="finale" id="book" aria-labelledby="finale-title">
+      <div class="finale__pattern" aria-hidden="true"></div>
+      <span class="finale__orb finale__orb--1" aria-hidden="true"></span>
+      <span class="finale__orb finale__orb--2" aria-hidden="true"></span>
+      <div class="finale__inner">
+        <h2 class="finale__title" id="finale-title" data-reveal>Ready to give your customers<br />real humans?</h2>
+        <p class="finale__sub" data-reveal>Fifteen minutes with our team. Your stack, your hours, your real number &mdash; no pitch, no obligation.</p>
+        <div class="finale__actions" data-reveal>
+          <button class="btn btn--white btn--lg" type="button" data-magnetic
+            data-cal-link="1st-verse/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>
+            Book a 15-min call <span class="btn__arr" aria-hidden="true">&rarr;</span>
+          </button>
+          <a class="btn btn--outline-light btn--lg" href="#pricing">Run the calculator</a>
+        </div>
+        <p class="finale__micro" data-reveal>100% human-led &middot; no bots, ever &middot; 7-day free trial</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a class="brand" href="#" aria-label="1st-verse home">
+        <svg class="brand__mark" viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
+          <rect x="1" y="1" width="38" height="38" rx="11" fill="#1972F5"/>
+          <path d="M12.8 17.4 Q18.1 12.5 18.1 15.6 L18.1 21.2" fill="none" stroke="#fff" stroke-width="4.2"/>
+          <path d="M27.9 12.8 Q27.9 15.8 21.5 22.6" fill="none" stroke="#fff" stroke-width="4.2"/>
+          <circle cx="18.1" cy="26.2" r="2.8" fill="#FFC53D"/>
+        </svg>
+        <span class="brand__word">1st-verse</span>
+      </a>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#services">Features</a>
+        <a href="#process">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:hello@1st-verse.com">hello@1st-verse.com</a>
+      </nav>
+      <span class="footer__legal">&copy; 2026 1st-verse &middot; Built for Shopify &amp; SaaS</span>
+    </div>
+  </footer>
+
+  <!-- ============ CHAT WIDGET ============ -->
+  <aside class="chat" aria-label="Live chat">
+    <div class="chat__panel" data-chat-panel aria-hidden="true">
+      <header class="chat__head">
+        <span class="ava ava--sk ava--lg">SK<i class="chat__dot"></i></span>
+        <div class="chat__id">
+          <b>Sarah &middot; 1st-verse</b>
+          <small>replies in about 38 seconds</small>
+        </div>
+        <button class="chat__close" data-chat-close aria-label="Close chat">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </button>
+      </header>
+      <div class="chat__body" data-chat-body>
+        <div class="chat__msg chat__msg--agent" data-chat-msg>Hi &mdash; Sarah from 1st-verse &#128075; A real human, since you&rsquo;re probably wondering.</div>
+        <div class="chat__msg chat__msg--agent" data-chat-msg>Want me to price your support in about 60 seconds?</div>
+        <div class="chat__typing" data-chat-typing aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="chat__msg chat__msg--user" data-chat-msg>Go on.</div>
+        <div class="chat__msg chat__msg--agent" data-chat-msg>One rate &mdash; $15/hr, all-in. Slide your weekly hours into the calculator and the ledger prints your savings. Or we do it live on a call.</div>
+        <div class="chat__chips" data-chat-chips>
+          <button class="chat__chip" type="button" data-action="calc">Show the calculator</button>
+          <button class="chat__chip" type="button" data-action="call">Book a 15-min call</button>
+        </div>
+      </div>
+      <footer class="chat__foot">
+        <span class="chat__input">Type a message&hellip;</span>
+        <button class="chat__send" aria-label="Send message">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 11l18-8-8 18-2.5-7.5z" fill="currentColor"/></svg>
+        </button>
+      </footer>
+    </div>
+    <button class="chat__launcher" data-chat-launcher aria-label="Open live chat" aria-expanded="false">
+      <span class="chat__badge" data-chat-badge>1</span>
+      <svg class="chat__ic chat__ic--open" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.8 3.8c-.5.4-1.2 0-1.2-.6V5.5z" fill="currentColor"/>
+      </svg>
+      <svg class="chat__ic chat__ic--close" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </aside>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

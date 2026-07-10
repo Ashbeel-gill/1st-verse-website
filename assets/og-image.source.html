@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blue:#1972F5; --blue-hover:#1258D6; --navy:#030D26; --slate:#5D6B98;
+    --paper:#FCFCFD; --show-blue:#EAF2FF; --yellow:#FFC53D;
+    --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1200px;height:630px;}
+  body{
+    font-family:"Figtree",-apple-system,"Segoe UI",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--navy);
+    position:relative;
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* soft dot-grid, masked toward center-left */
+  .grid{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(3,13,38,0.055) 1.4px, transparent 1.4px);
+    background-size:26px 26px;
+    -webkit-mask-image:radial-gradient(120% 100% at 18% 40%, #000 0%, transparent 72%);
+            mask-image:radial-gradient(120% 100% at 18% 40%, #000 0%, transparent 72%);
+  }
+  /* aurora blobs */
+  .blob{position:absolute; border-radius:50%; filter:blur(70px); opacity:0.5;}
+  .b1{width:520px;height:520px;background:#BFD8FF;top:-160px;right:-120px;}
+  .b2{width:360px;height:360px;background:#E4D8FF;bottom:-150px;right:120px;opacity:0.42;}
+  .b3{width:300px;height:300px;background:#D6ECFF;top:200px;left:-120px;opacity:0.4;}
+
+  .wrap{position:relative;height:100%;padding:76px 84px;display:flex;flex-direction:column;}
+
+  .brand{display:flex;align-items:center;gap:16px;}
+  .brand svg{width:52px;height:52px;filter:drop-shadow(0 6px 14px rgba(25,114,245,.28));}
+  .brand .wm{font-weight:800;font-size:30px;letter-spacing:-0.03em;color:var(--navy);}
+  .brand .wm b{color:var(--blue);font-weight:900;}
+
+  .eyebrow{
+    margin-top:auto;
+    display:inline-flex;align-items:center;gap:10px;
+    align-self:flex-start;
+    background:#fff;border-radius:999px;
+    padding:9px 16px 9px 14px;
+    font-size:16px;font-weight:600;color:var(--slate);
+    box-shadow:0 0 0 1px rgba(3,13,38,.06), 0 8px 22px rgba(3,13,38,.06);
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:#2DC862;box-shadow:0 0 0 4px rgba(45,200,98,.18);}
+
+  h1{
+    margin-top:22px;
+    font-size:74px;line-height:1.02;font-weight:900;letter-spacing:-0.035em;
+    color:var(--navy);max-width:1000px;
+  }
+  .hl{position:relative;white-space:nowrap;z-index:1;}
+  .hl::before{
+    content:"";position:absolute;z-index:-1;
+    left:-8px;right:-8px;top:8%;bottom:8%;
+    background:#BFDBFF;border-radius:14px;
+    transform:rotate(-1.2deg);
+  }
+
+  .sub{margin-top:26px;font-size:27px;font-weight:500;color:var(--slate);letter-spacing:-0.01em;}
+  .sub b{color:var(--navy);font-weight:800;}
+
+  .chips{margin-top:auto;display:flex;gap:12px;flex-wrap:wrap;}
+  .chip{
+    display:inline-flex;align-items:center;gap:9px;
+    background:#fff;border-radius:999px;padding:11px 18px;
+    font-size:17px;font-weight:600;color:var(--navy);
+    box-shadow:0 0 0 1px rgba(3,13,38,.06), 0 8px 22px rgba(3,13,38,.05);
+  }
+  .chip .tick{
+    width:20px;height:20px;border-radius:50%;background:var(--blue);
+    display:inline-flex;align-items:center;justify-content:center;
+    background-image:var(--grain);background-blend-mode:soft-light;
+  }
+  .chip .tick svg{width:12px;height:12px;}
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-label="1st-verse">
+        <rect x="1" y="1" width="38" height="38" rx="11" fill="#1972F5"/>
+        <path d="M12.8 17.4 Q18.1 12.5 18.1 15.6 L18.1 21.2" fill="none" stroke="#fff" stroke-width="4.2"/>
+        <path d="M27.9 12.8 Q27.9 15.8 21.5 22.6" fill="none" stroke="#fff" stroke-width="4.2"/>
+        <circle cx="18.1" cy="26.2" r="2.8" fill="#FFC53D"/>
+      </svg>
+      <span class="wm">1st<b>-</b>verse</span>
+    </div>
+
+    <div class="eyebrow"><span class="dot"></span>100% human CX agents — no bots, ever</div>
+
+    <h1>Real humans.<br><span class="hl">Unreal</span> customer experience.</h1>
+
+    <div class="sub"><b>$15/hour</b>, all-in. Billed to the minute. Live in under 60&nbsp;minutes.</div>
+
+    <div class="chips">
+      <span class="chip"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5 4.7 9 10 3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>7-day free trial</span>
+      <span class="chip"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5 4.7 9 10 3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>No contracts</span>
+      <span class="chip"><span class="tick"><svg viewBox="0 0 12 12"><path d="M2 6.5 4.7 9 10 3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>24/7 follow-the-sun</span>
+    </div>
+  </div>
+</body>
+</html>
