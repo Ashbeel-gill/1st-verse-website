@@ -816,193 +816,9 @@
   }
 
   /* ---------------------------------------------------------
-     Chat widget
-  --------------------------------------------------------- */
-  const chat = $(".chat");
-  const launcher = $("[data-chat-launcher]");
-  const panel = $("[data-chat-panel]");
-  const badge = $("[data-chat-badge]");
-  const closeBtn = $("[data-chat-close]");
-  const body = $("[data-chat-body]");
-  const typingEl = $("[data-chat-typing]");
-  const chips = $("[data-chat-chips]");
-  const msgs = $$("[data-chat-msg]");
-
-  let chatOpen = false;
-  let scriptPlayed = false;
-
-  gsap.set([...msgs, typingEl, chips], { display: "none" });
-
-  const badgePulse = gsap.to(badge, {
-    scale: 1.2,
-    duration: 0.45,
-    yoyo: true,
-    repeat: -1,
-    repeatDelay: 2.2,
-    ease: "power2.inOut",
-  });
-
-  gsap.from(launcher, {
-    scale: 0,
-    opacity: 0,
-    duration: 0.7,
-    delay: 1.2,
-    ease: "back.out(1.8)",
-  });
-
-  // Cal.com binds via delegated clicks on [data-cal-link]; arm the chip
-  const callChip = $('.chat__chip[data-action="call"]');
-  if (callChip) {
-    callChip.setAttribute("data-cal-link", "1st-verse/30min");
-    callChip.setAttribute("data-cal-namespace", "30min");
-    callChip.setAttribute("data-cal-config", '{"layout":"month_view"}');
-  }
-
-  function popIn(el, origin) {
-    gsap.set(el, { display: el.classList.contains("chat__chips") ? "flex" : "block" });
-    return gsap.fromTo(
-      el,
-      { opacity: 0, scale: 0.7, y: 10 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.8)", transformOrigin: origin }
-    );
-  }
-
-  function showTyping(beforeEl) {
-    if (beforeEl) body.insertBefore(typingEl, beforeEl);
-    else body.appendChild(typingEl);
-    return popIn(typingEl, "bottom left");
-  }
-
-  function hideTyping() {
-    return gsap.to(typingEl, {
-      opacity: 0,
-      scale: 0.7,
-      duration: 0.2,
-      ease: "power2.in",
-      onComplete: () => gsap.set(typingEl, { display: "none" }),
-    });
-  }
-
-  const scrollBodyDown = () => (body.scrollTop = body.scrollHeight);
-
-  function playScript() {
-    if (scriptPlayed) return;
-    scriptPlayed = true;
-
-    const [msg1, msg2, userMsg, msg3] = msgs;
-    const tl = gsap.timeline({ defaults: { onComplete: scrollBodyDown } });
-
-    tl.add(showTyping(msg1), "+=0.5");
-    tl.add(hideTyping(), "+=0.9");
-    tl.add(() => popIn(msg1, "bottom left"));
-    tl.add(showTyping(msg2), "+=0.7");
-    tl.add(hideTyping(), "+=0.9");
-    tl.add(() => popIn(msg2, "bottom left"));
-    tl.add(() => popIn(userMsg, "bottom right"), "+=1.1");
-    tl.add(showTyping(msg3), "+=0.6");
-    tl.add(hideTyping(), "+=1.1");
-    tl.add(() => popIn(msg3, "bottom left"));
-    tl.add(() => {
-      popIn(chips, "top left");
-      gsap.fromTo(
-        $$(".chat__chip"),
-        { opacity: 0, y: 8 },
-        { opacity: 1, y: 0, duration: 0.4, stagger: 0.09, ease: "power3.out" }
-      );
-    }, "+=0.3");
-  }
-
-  function openChat() {
-    if (chatOpen) return;
-    chatOpen = true;
-    chat.classList.add("is-open");
-    launcher.setAttribute("aria-expanded", "true");
-    panel.setAttribute("aria-hidden", "false");
-    badgePulse.pause();
-    gsap.fromTo(
-      panel,
-      { opacity: 0, scale: 0.7, y: 20 },
-      { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "power4.out" }
-    );
-    playScript();
-  }
-
-  function closeChat() {
-    if (!chatOpen) return;
-    gsap.to(panel, {
-      opacity: 0,
-      scale: 0.75,
-      y: 18,
-      duration: 0.28,
-      ease: "power3.in",
-      onComplete: () => {
-        chat.classList.remove("is-open");
-        launcher.setAttribute("aria-expanded", "false");
-        panel.setAttribute("aria-hidden", "true");
-        chatOpen = false;
-      },
-    });
-  }
-
-  launcher.addEventListener("click", () => (chatOpen ? closeChat() : openChat()));
-  closeBtn.addEventListener("click", closeChat);
-
-  chips.addEventListener("click", (e) => {
-    const chip = e.target.closest(".chat__chip");
-    if (!chip) return;
-    const action = chip.dataset.action;
-
-    gsap.to(chips, {
-      opacity: 0,
-      scale: 0.8,
-      duration: 0.22,
-      ease: "power2.in",
-      onComplete: () => gsap.set(chips, { display: "none" }),
-    });
-
-    const reply = document.createElement("div");
-    reply.className = "chat__msg chat__msg--user";
-    reply.textContent = chip.textContent;
-    body.appendChild(reply);
-    popIn(reply, "bottom right");
-    scrollBodyDown();
-
-    gsap.delayedCall(0.6, () => {
-      showTyping();
-      scrollBodyDown();
-      gsap.delayedCall(1.1, () => {
-        hideTyping();
-        const answer = document.createElement("div");
-        answer.className = "chat__msg chat__msg--agent";
-        answer.textContent =
-          action === "calc"
-            ? "Taking you there — slide the hours and watch the ledger update."
-            : "Opening the calendar. Pick any slot; we'll bring the numbers.";
-        body.appendChild(answer);
-        popIn(answer, "bottom left");
-        scrollBodyDown();
-        if (action === "calc") {
-          gsap.delayedCall(0.9, () => {
-            closeChat();
-            $("#pricing").scrollIntoView({ behavior: "smooth" });
-          });
-        }
-      });
-    });
-  });
-
-  // Desktop: open once, politely, after the hero settles
-  mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
-    const t = gsap.delayedCall(4, () => {
-      if (!chatOpen && !scriptPlayed) openChat();
-    });
-    return () => t.kill();
-  });
-
-  /* ---------------------------------------------------------
      Resilience net
-     Choreographed content and the chat launcher start hidden and are
-     revealed by GSAP. Two real-world failure modes are guarded here:
+     Choreographed content below the hero starts hidden and is revealed
+     by GSAP. Two real-world failure modes are guarded here:
 
      1. Mobile ScrollTrigger positions computed before images/fonts
         settle (or shifted by the address bar) can end up unreachable,
@@ -1011,9 +827,8 @@
 
      2. On some mobile / background-tab loads requestAnimationFrame is
         throttled so hard the GSAP ticker never advances — no animation
-        ever plays, leaving every reveal invisible and the launcher a
-        0x0 dot. Detect that (ticker didn't move) and drop the page to
-        its finished, visible, clickable state.
+        ever plays, leaving every reveal invisible. Detect that (ticker
+        didn't move) and drop the page to its finished, visible state.
   --------------------------------------------------------- */
   const refreshTriggers = () => ScrollTrigger.refresh();
   window.addEventListener("load", refreshTriggers);
@@ -1024,6 +839,5 @@
     const tickerAlive = gsap.ticker.time - tickerAtBoot > 0.1;
     if (tickerAlive) return; // animations are running — leave them alone
     showFinalState();
-    if (launcher) gsap.set(launcher, { clearProps: "all" });
   }, 3000);
 })();
