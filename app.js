@@ -825,19 +825,34 @@
         so reveals never fire — recompute them once the page fully
         loads and whenever the viewport orientation changes.
 
-     2. On some mobile / background-tab loads requestAnimationFrame is
-        throttled so hard the GSAP ticker never advances — no animation
-        ever plays, leaving every reveal invisible. Detect that (ticker
-        didn't move) and drop the page to its finished, visible state.
+     2. On some mobile / background-tab loads the browser starves the
+        rendering update loop, so requestAnimationFrame (and with it the
+        GSAP ticker) stalls — no animation ever plays and every reveal
+        stays invisible. IntersectionObserver is delivered in that SAME
+        rendering step, so it stalls too and can't be used to rescue this
+        case; only timer tasks (setTimeout) keep firing. So when the
+        ticker isn't advancing, drop the whole page to its finished,
+        visible state via a timer.
+
+     Liveness is sampled over a RECENT window (t1→t2 just before the
+     deadline), NOT cumulatively from boot. The earlier boot-relative
+     check (`ticker.time - tickerAtBoot > 0.1`) had a false-positive: a
+     tab that runs a few frames on load and only THEN throttles to a stop
+     inflates the boot-relative delta past the threshold, so the fallback
+     wrongly stood down and content stayed hidden — the recurring mobile
+     bug. A recent-window sample reads that "ran then froze" tab as dead.
   --------------------------------------------------------- */
   const refreshTriggers = () => ScrollTrigger.refresh();
   window.addEventListener("load", refreshTriggers);
   window.addEventListener("orientationchange", refreshTriggers);
 
-  const tickerAtBoot = gsap.ticker.time;
+  let tickerT1 = gsap.ticker.time;
   window.setTimeout(() => {
-    const tickerAlive = gsap.ticker.time - tickerAtBoot > 0.1;
-    if (tickerAlive) return; // animations are running — leave them alone
+    tickerT1 = gsap.ticker.time;
+  }, 2700);
+  window.setTimeout(() => {
+    const advancingNow = gsap.ticker.time - tickerT1 > 0.05;
+    if (advancingNow) return; // ticker still running — leave animations alone
     showFinalState();
   }, 3000);
 })();
